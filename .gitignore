@@ -16,3 +16,12 @@
 # Editor / OS cruft
 *.DS_Store
 *~
+*.aux
+*.log
+*.toc
+*.out
+*.synctex*
+*.fdb_latexmk
+*.fls
+*.DS_Store
+*~
