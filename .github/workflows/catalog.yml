@@ -1,0 +1,22 @@
+name: build-catalog
+on:
+  push:
+    paths: ["*.pdf"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.x" }
+      - run: pip install PyPDF2 pandas
+      - run: python build_catalog.py
+      - name: Commit updated catalog
+        run: |
+          git config user.name catalog-bot
+          git config user.email bot@example.com
+          git add catalog
+          git diff --cached --quiet || git commit -m "auto: update catalog"
+      - uses: ad-m/github-push-action@v0.8.0
+        with: { github_token: ${{ secrets.GITHUB_TOKEN }} }
+
