@@ -24,6 +24,7 @@ jobs:
           git add catalog
           git diff --cached --quiet || git commit -m "auto: update catalog"
 
-      - uses: ad-m/github-push-action@v0.8.0
+      - name: Push catalog
+        uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
