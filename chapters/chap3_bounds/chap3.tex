@@ -1,1 +1,49 @@
 % stub
+% Chapter 3 – Informational Bounds & Entropy Limits
+% Source PDFs: Bekenstein_Bound_FIL.pdf,
+%              Finite_Knowledge_Bounds.pdf,
+%              Accelleration.pdf,
+%              Big Bang as Information Phase Transition.pdf
+% ------------------------------------------------------------
+
+\chapter{Informational Bounds}\label{chap:bounds}
+
+\section{Bekenstein‑like Entropy Limit for Language}
+
+The classical Bekenstein bound \cite{bekenstein1981} constrains the maximum entropy $S$ of physical matter in a region of radius $R$ and energy $E$ by $S\le 2\pi k E R/\hbar c$.  In the FIL setting, tokens carry informational mass and the analogue becomes
+\begin{equation}
+  H(\mathcal L) \;\le\; 2\pi\,k_s\,E_{\!\mathcal L}\,R_{\!\mathcal L}\,\big/\,\hs,
+\end{equation}
+where $E_{\!\mathcal L}$ is the cumulative energetic cost of storing the language fragment and $R_{\!\mathcal L}$ its semantic diameter.
+
+\paragraph{Interpretation.}  If $H$ exceeds this limit, further compression (via LLC bridges) or hierarchical segmentation is required.
+
+\section{Finite Knowledge Bounds}
+
+Let $G=(V,E)$ be a directed knowledge graph with path entropy $H_P$ and symbol complexity $C_s$.  \textcite{finiteknowledgebounds2025} derive upper and lower compression bounds
+\begin{equation}
+  \frac{|V|}{\log C_s}\;\le\;H_P\;\le\;|E|\,\log C_s.
+\end{equation}
+We adopt the lower bound as the \emph{finite knowledge bound} (FKB) for any segment.
+
+\subsection{Prime‑Encoding Lower Bound}
+Prime‑encoding of edge labels achieves the lower bound asymptotically; see Appendix~\ref{app:prime-encoding}.
+
+\subsection{Voronoi Capacity Upper Bound}
+Semantic Voronoi cells give a geometric ceiling; we revisit this in Chapter~\ref{chap:dynamics} when studying drift fields.
+
+\section{Acceleration Constraint}
+
+\textcite{accelleration2025} show that rapid semantic updates imply an \emph{acceleration cost}
+\begin{equation}
+  a_{\!\mathcal L}\;\equiv\;\frac{d^2 H}{dt^2}\;\le\;\cs^2/\ell_{\min},
+\end{equation}
+with $\ell_{\min}$ the minimum edge length.  This links light‑cone slope ($\cs$) to second‑order dynamics.
+
+\section{Big Bang as Information Phase Transition}
+The cosmological Big Bang is recast as a phase transition where $H\to 0$ while $dH/dt\to\infty$.  Under FKB this corresponds to the creation of the minimal language fragment required for any subsequent evolution.
+
+\section{Road‑map}
+Informational limits set the stage for Chapter~\ref{chap:dynamics}, where drift and masks operate within these bounds, and Chapter~\ref{chap:physical}, which ties them to particle‑level information exchange.
+
+\clearpage
