@@ -1,1 +1,72 @@
 % stub
+% Chapter 2 – Semantic Geometry & Light‑Cone Structure
+% Source PDFs: 03_Semantic_Lightcones_and_Propagation.pdf,
+%              04_Informational_Curvature_and_Semantic_Gravitation.pdf,
+%              Computational Spacetime Geometry.pdf,
+%              FL_Field_MetaLaw_to_Quantization.pdf
+% ------------------------------------------------------------
+
+\chapter{Semantic Geometry}\label{chap:geometry}
+
+\section{Semantic Light‑Cones}\label{sec:lightcones}
+
+In a knowledge graph $G=(V,E)$ we define the \emph{semantic distance}
+$d_G(v_1,v_2)$ as the minimal edge‑weighted path length between two
+concept vertices.  Postulate F1 implies that information flow is bounded
+by the constant $\cs$ introduced in Chapter~\ref{chap:foundations}:
+\begin{equation}
+  d_G(v_1,v_2) \;\le\; \cs\,\Delta t.
+  \label{eq:semantic-cone}
+\end{equation}
+Points satisfying equality trace \textbf{semantic light‑cones}.  They
+encode the frontier beyond which two agents cannot reach mutual
+comprehension within $\Delta t$.
+
+% TODO: Figure — cone diagram in $t$–$d_G$ plane.
+
+\paragraph{Propagation kernel.}  Let $K_t(v)$ denote the reachable set
+from $v$ in time $t$.  A discrete propagator is
+$P_t=\mathbb 1_{d_G\le\cs t}$.
+% (Further derivations to come; see CSLP p. 3.)
+
+\section{Informational Curvature}\label{sec:curvature}
+
+Light‑cone slope alone does not capture \emph{semantic gravitation}—the
+tendency of dense subgraphs to attract interpretive trajectories.  We
+introduce an \emph{informational curvature tensor} $\mathcal K$ via the
+deviation of geodesics in $G$:
+\begin{equation}
+  \delta^2 d_G = -\mathcal K(\gamma,\dot\gamma)\,d\sigma^2.
+\end{equation}
+Positive curvature corresponds to semantic "mass" and appears near high
+mutual‑information clusters.  See \cite{curvaturePDF}(§2) for the full
+derivation.
+
+\subsection*{Example – category junction}
+Two dense languages $L_1,L_2$ joined by a minimal LLC bridge $B$ create
+negative curvature in the bridge (saddle) and positive curvature inside
+each language core.
+
+\section{Computational Spacetime Correspondence}\label{sec:comp-spacetime}
+
+Mapping Eq.~\eqref{eq:semantic-cone} onto a Turing tape with physical
+delays $\tau$, we recover the computational light‑speed bound
+$\cs\approx\!1/\tau$ \cite{compSpacetime}.  Informational curvature then
+corresponds to non‑uniform memory access latencies—regions of high
+semantic mass behave as RAM “black holes”.
+
+\section{Meta‑Law and Quantisation}\label{sec:metalaw}
+
+FL\_Field Meta‑Law postulates a universal action principle in
+information space.  Quantising small oscillations of $d_G$ about a
+ground state yields a discrete spectrum analogous to normal modes in
+Riemannian geometry.  This motivates the uncertainty relation derived in
+Eq.~(\ref{eq:sem-uncertainty}).
+
+% ------------------------------------------------------------
+\bigskip\noindent\textbf{Take‑away.}\;The geometry of semantic light‑cones and
+informational curvature generalises relativistic causality to knowledge
+systems, setting the stage for global bounds (Chapter~\ref{chap:bounds})
+and dynamical drift analysis (Chapter~\ref{chap:dynamics}).
+
+\clearpage
