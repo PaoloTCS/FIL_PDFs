@@ -3,6 +3,8 @@ on:
   push:
     paths: ["*.pdf"]
 
+permissions:
+  contents: write      # allow the workflow to push commits 
 jobs:
   build:
     runs-on: ubuntu-latest
