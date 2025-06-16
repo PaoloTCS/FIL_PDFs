@@ -1,1 +1,91 @@
 % stub
+% Chapter 4 – Dynamics, Drift & Mask‑Based Stabilisation
+% ------------------------------------------------------
+% Source PDFs:
+%   * Semantic_Shadow_Reconstruction_Draft3.pdf (SSR)
+%   * SSR_Stabilization.pdf, SSR_Stabilization2.pdf
+%   * Weighted_Observation_Gaussian_Mixtures.pdf (WOGM)
+%   * PerturbationCellularAutomata.pdf (PCA)
+%   * Nibbler Primordial Operations.pdf, Nibbler1.pdf
+%   * Integration_Discovery_Invention_UIL_Framework.pdf
+% ------------------------------------------------------
+
+\chapter{Dynamics, Drift, and Mask‑Based Stabilisation}\label{chap:dynamics}
+
+\section{Diagnosing Semantic Drift}\label{sec:drift}
+
+Let $\delta_k(n)$ denote the \emph{drift magnitude} of concept $k$ after $n$ network
+layers.  Following \textcite{SSR_Draft3}, we define
+\begin{equation}
+  \delta_k(n)\;=\;\frac{\| P^n_k - P^0_k \|}{\|P^0_k\|},
+\end{equation}
+where $P^n_k$ is the perturbation field of concept~$k$ at depth~$n$.  The \emph{shadow
+ depth} $\Delta^n_k$ is the first layer $m>n$ such that $\delta_k(m) < \varepsilon$.
+A rising sequence $\Delta^n_k$ indicates unstable semantics.
+
+\section{Mask Evolution Operator}\label{sec:MEO}
+
+Dynamic masks $M^n_k$ are injected at layer~$n$ to probe drift.  The \textbf{Mask
+ Evolution Operator} (MEO) propagates masks across depth:
+\begin{equation}
+  T^n_1:\;M^1_k\;\longmapsto\;M^n_k, \qquad
+  T^n_1\;=\;T^n_{n-1}\circ\dots\circ T^2_1.
+\end{equation}
+The \emph{error tensor}
+\begin{equation}
+  E^n_k\;=\;M^n_k - T^n_1(M^1_k)
+\end{equation}
+serves as a drift‐diagnostic: $\|E^n_k\|\to0$ implies layer stability.
+
+\section{Gaussian‐Mixture View of Observation}\label{sec:GMM}
+
+Observation tokens are embedded as weighted Gaussian mixtures $\text{GMM}(w_i,\mu_i,\Sigma_i)$.
+Overlap of components predicts hallucination regions.  The mixture distance
+introduces a probabilistic refinement of the drift metric:
+\begin{equation}
+  d_{\text{GMM}}(p,q) \;=\; 1 - \sum_i \sqrt{w_i^{(p)}\,w_i^{(q)}}\,e^{-\tfrac12\Delta\mu_i^{\mathsf T}\Sigma_i^{-1}\Delta\mu_i}.
+\end{equation}
+
+\section{Perturbation Cellular Automata}\label{sec:PCA}
+
+Discrete propagation of truth‑wavefronts may be simulated by a perturbation cellular
+automaton (PCA) on the concept graph $G=(V,E)$.  Each cell updates via
+\begin{equation}
+  s_{t+1}(v)\;=\;f\bigl(s_t(v),\,(s_t(u))_{u\in N(v)}\bigr),
+\end{equation}
+where $f$ conserves a local \emph{semantic energy} to satisfy the bound $d_G\le\cs\Delta t$.
+
+\section{The Nibbler Algorithm}\label{sec:Nibbler}
+
+\begin{enumerate}
+  \item Initialise discovery state $D_0$ and pattern set $P_0$.
+  \item (Discovery)  $D_{t+1} \leftarrow D_t + \text{NibblerStep}(D_t)$.  
+  \item (Pattern)    $P_{t+1} \leftarrow \text{MetaPattern}(P_t, D_{t+1})$.
+  \item Repeat until $\Delta D$ and $\Delta P$ fall below thresholds.
+\end{enumerate}
+The interface kernel
+\begin{equation}
+  k_{\text{NI}}(x,y)\;=\;\alpha k_D(x,y) + (1-\alpha)k_P(x,y)
+\end{equation}
+controls the discovery–pattern balance.
+
+\section{Integration with the UIL Framework}\label{sec:UIL-integr}
+
+\textcite{Integration_UIL} extend the graph model to include confidence $c(\omega)$ and
+security $\lambda(\omega)$.  The drift‑aware propagation rule becomes
+\begin{equation}
+  \Delta( v_i, v_{i+1} )\;=\;\min\Bigl(\text{info change}\mid
+  \lambda(v_{i+1})\ge\lambda_{\min},\;c(\omega)\ge c_{\min}\Bigr).
+\end{equation}
+
+\section{Outlook}
+This chapter introduced dynamical machinery that preserves the semantic constants while
+allowing adaptive evolution.  Chapter~\ref{chap:physical} maps these operators to
+physical processes—e.g.\, interferometric stabilisation in the InterferoShell.
+
+\bigskip\noindent\textbf{Take‑away.}\;Mask evolution, GMM observation, and Nibbler search
+conspire to keep drift bounded without violating the informational limits of
+Chapter~\ref{chap:bounds}.
+
+\clearpage
+
