@@ -38,5 +38,5 @@
 | 34 | interferoshell_main.pdf | 2 | The InterferoShell: A Spherical Field-Based | foundations |
 | 35 | intro1.pdf | 2 | Towards a Fundamental Language: | foundations |
 | 36 | intro2.pdf | 2 | Towards a Fundamental Language: | foundations |
-| 37 | main10.pdf | 4 | Fundamental Interaction Language | foundations |
+| 37 | main10.pdf | 6 | Fundamental Interaction Language | foundations |
 | 38 | zz_dummy.pdf | 2 | The Information–Observation–Language Triad | foundations |
