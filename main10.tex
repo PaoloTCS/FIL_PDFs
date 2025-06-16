@@ -1,9 +1,23 @@
-\documentclass{article}
+\documentclass{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textgreek}
+\usepackage{braket}
 \usepackage{import}
+
+\input{style/notation.tex}   % <-- new
+
 \begin{document}
+
+\title{Fundamental Interaction Language}
+\author{Paolo Pignatelli}
+\maketitle
+
 \import{chapters/chap1_foundations/}{chap1.tex}
-\import{chapters/chap2_geometry/}{chap2.tex}
+\import{chapters/chap2_geometry/}{chap2.tex}   % stubs ok
 \import{chapters/chap3_bounds/}{chap3.tex}
 \import{chapters/chap4_dynamics/}{chap4.tex}
 \import{chapters/chap5_physical/}{chap5.tex}
+
 \end{document}
