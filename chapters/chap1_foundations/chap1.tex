@@ -1,2 +1,61 @@
-\section{Foundations and Constants}
-Placeholder -- will be populated from PDFs 01 and 02.
+% Chapter 1 – Foundations & Semantic Constants
+% (Cleaned version — no placeholder glyphs)
+
+\chapter{Foundations and Semantic Constants}\label{chap:foundations}
+
+\section{The Information--Observation--Language (I--O--L) Triad}\label{sec:IOL-triad}
+
+Modern knowledge systems reveal a recurring motif: comprehension requires only the
+\emph{differences} between two bodies of knowledge, not their entirety.  We formalise this
+with the \textbf{Information--Observation--Language triad}
+\begin{equation}
+  \Triad = (\mathcal I,\, \mathcal O,\, \mathcal L),
+\end{equation}
+where $\mathcal I$ denotes possible information states, $\mathcal O$ the set of admissible
+observations, and $\mathcal L$ the symbolic language capable of encoding both.  Minimal
+"bridges" between domains are implemented by Local Language Constructors (LLCs), treated
+in Chapter~\ref{chap:dynamics}.
+
+\section{Foundational Postulates}\label{sec:axioms}
+
+\begin{description}
+  \item[Postulate F1 (Semantic locality).]  Any act of communication factors through a
+  finite sub‑language $B\subseteq \mathcal L$ such that $E\otimes B\cong \mathcal L$, with
+  $E$ the receiver's existing language fragment.
+
+  \item[Postulate F2 (Minimal bridges).]  Among all such $B$, natural communication
+  selects one that minimises $|B|$.
+
+  \item[Postulate F3 (Hierarchical union).]  Languages compose by hierarchical union and
+  the semantic density $\rho$ is non‑decreasing under this union.
+\end{description}
+
+\section{Semantic Constants}\label{sec:constants}
+
+We introduce two universal constants:
+\begin{description}
+  \item[$\cs$] the \emph{semantic light‑speed}, bounding information propagation in a
+  knowledge graph:
+  \begin{equation}
+    d_G(v_1,v_2)\;\le\;\cs\,\Delta t.
+  \end{equation}
+
+  \item[$\hs$] the \emph{semantic Planck constant}, appearing in an uncertainty relation
+  between discovery and invention operators:
+  \begin{equation}
+    \Delta D\,\Delta I\;\ge\;\tfrac12\hs.\label{eq:sem-uncertainty}
+  \end{equation}
+\end{description}
+Convenient units set $\cs\!=\!\hs\!=\!1$; deviations measure complexity.
+
+\section{Road‑map}
+This chapter establishes notation for the remainder of the book.
+Chapter~\ref{chap:geometry} develops the geometric view ($\cs$ as cone slope),
+Chapter~\ref{chap:bounds} derives global limits from Eq.~\eqref{eq:sem-uncertainty},
+Chapter~\ref{chap:dynamics} treats drift and masks, and
+Chapter~\ref{chap:physical} links the constants to physical information bounds.
+
+\bigskip\noindent\textbf{Take‑away.}\;The triad $\Triad$ and constants $(\cs,\hs)$ provide
+an irreducible substrate on which all higher FIL structures are built.
+
+\clearpage
