@@ -1,0 +1,37 @@
+% §2.5 – Voronoi Tessellation for Knowledge Navigation
+% ----------------------------------------------------
+% Source Chat: "Tessellation for Knowledge Navigation" walk‑notes (o3)
+
+\section{Voronoi Tessellation and Knowledge Navigation}\label{sec:tessellation}
+
+Traditional path‑finding on a dense knowledge graph $G=(V,E)$ scales poorly with $|V|$.
+To achieve sub‑logarithmic query time we partition $V$ into \emph{semantic Voronoi cells}:
+\begin{definition}[Semantic Voronoi Cell]
+For a seed node $s\in V$ the cell $\operatorname{Vor}(s)$ is
+\[
+  \operatorname{Vor}(s)=\{v\in V\mid d_G(v,s)\le d_G(v,s')\;\forall s'\neq s\}.\,
+\]
+\end{definition}
+Cells tile the graph when seeds form a maximal $\epsilon$‑net.  The navigation algorithm is then:
+\begin{enumerate}
+  \item Locate the source and target cells via hashing of node signatures.
+  \item Traverse the cell adjacency graph (typically \(O(\sqrt{|V|})\) cells).
+  \item Within the target cell, apply local Djikstra (size $\le\epsilon$).
+\end{enumerate}
+
+\paragraph{Curvature connection.}  Boundaries between cells coincide with geodesics of
+informational curvature $\kappa$ (Section~\ref{sec:curvature}).  High $\kappa$ regions
+produce finer tessellations, automatically allocating more seeds where semantic density is high.
+
+\paragraph{Drift boundaries.}  In Chapter~\ref{chap:dynamics} drift masks align to cell
+faces; thus tessellation acts as a coarse pre‑mask, reducing the dimensionality of drift
+correction.
+
+\paragraph{Complexity.}  With uniform $k$‑nearest‑neighbour degree and $n$ seeds the
+cell adjacency graph has $O(n)$ edges; navigation complexity becomes
+\(O(\sqrt{n}+\epsilon)\), sub‑logarithmic in $|V|$ for well‑chosen $n\approx\sqrt{|V|}\).
+
+\paragraph{Future work.}  Investigate hyperbolic Voronoi in negative‑curvature regions and
+probabilistic tessellations where seed membership is fuzzy.
+
+% end §2.5
