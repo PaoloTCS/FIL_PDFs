@@ -1,21 +1,19 @@
-% stub
-% Chapter 5 – Physical & Computational Correspondence
-% ---------------------------------------------------
-% Source PDFs:
+% Chapter 5 – Physical & Computational Correspondence (InterferoShell removed)
+% ------------------------------------------------------------------------
+% Core PDFs:
 %   * Particle_Physics_and_Information.pdf (PPI)
 %   * Computational Relativity Theory – Complete Discussion and Experimental Design1.pdf
 %   * Computational Relativity_ A Framework for Information Processing in Spacetime copy.pdf
 %   * Computational Spacetime Geometry.pdf
 %   * Chapter 3 Physical Foundations of Computational Light‑Speed.pdf
-%   * interferoshell_main.pdf
 %   * Path-Encoding-Draft2.pdf
-% ---------------------------------------------------
+% ------------------------------------------------------------------------
 
 \chapter{Physical and Computational Correspondence}\label{chap:physical}
 
 \section{Particles as Information Events}\label{sec:ppi}
 
-Each fundamental interaction instantiates new information \cite{PPI}.  Let $S(t)=\{p_i,E_{ij}\}$ denote the quantum state at time~$t$.  A collision
+Each fundamental interaction instantiates new information\cite{PPI}.  Let $S(t)=\{p_i,E_{ij}\}$ denote the quantum state at time~$t$.  A collision
 $T:S(t)\to S(t+1)$ increases the descriptive complexity
 \begin{equation}
   \Delta I \;=\; I\bigl(S(t+1)\bigr)-I\bigl(S(t)\bigr)
@@ -25,44 +23,35 @@ This yields a conservation‑of‑information principle analogous to energy cons
 
 \section{Computational Relativity Analogy}\label{sec:comp-rel}
 
-\subsection{Complexity ↔ Time‑Dilation}
-Landauer–Bremermann bounds suggest that executing $N$ logical operations on mass~$m$ requires a minimum proper time $\Delta\tau\ge N\hbar/ (mc^2)$.
-Interpreting complexity as curvature we obtain a metric on algorithmic spacetime:
+\subsection{Complexity \textit{vs.} Time‑Dilation}
+Landauer–Bremermann bounds suggest that executing $N$ logical operations on mass~$m$ requires a minimum proper time $\Delta\tau\ge N\hbar/ (mc^2)$.  Interpreting complexity as curvature we obtain a metric on algorithmic spacetime:
 \begin{equation}
-  ds^2 = -\Bigl(1-\frac{2G\,C}{c^2 r}\Bigr)c^2 dt^2 + \Bigl(1-\frac{2G\,C}{c^2 r}\Bigr)^{-1}dr^2 + r^2 d\Omega^2,
+  ds^2 = -\Bigl(1-\tfrac{2G\,C}{c^2 r}\Bigr)c^2 dt^2 + \Bigl(1-\tfrac{2G\,C}{c^2 r}\Bigr)^{-1}dr^2 + r^2 d\Omega^2,
 \end{equation}
-with $C$ the local Kolmogorov complexity density.
+with $C$ the local Kolmogorov‑complexity density.
 
 \subsection{Physical Foundations of Computational Light‑Speed}
-Chapter~3 of \cite{PhysLightSpeed} derives a physical upper speed of algorithmic propagation that coincides with the semantic constant $\cs$ introduced in Chapter~\ref{chap:geometry}.
+Chapter~3 of \cite{PhysLightSpeed} derives a physical upper speed of algorithmic propagation that matches the semantic constant $\cs$ from Chapter~\ref{chap:geometry}.
 
 \section{Computational Spacetime Geometry}\label{sec:csg}
 Information flow defines a causal set $\mathcal C$ whose Hasse diagram embeds into the knowledge graph $G$.  Curvature of $\mathcal C$ matches informational curvature $\kappa$ of Section~\ref{sec:curvature}, closing the semantic‑physical loop.
 
-\section{InterferoShell Hardware Sketch}\label{sec:ishell}
-
-\begin{description}
-  \item[Architecture.]  A ring interferometer couples two superconducting qubits via a variable‑delay photonic path.
-  \item[Function.]     Physical phase shifts implement the mask evolution operator $T^n_1$ in hardware, stabilising drift.
-  \item[Throughput.]   Operational bandwidth is limited by the physical light‑speed bound $c$ and translates to $\cs$ cycles in semantic time.
-\end{description}
-
 \section{Prime Path Encoding for Graph Compression}\label{sec:path-encoding}
 
-Path‑encoding maps concept trajectories to unique prime products $\pi(P)=\prod p_i^{n_i}$.  The length satisfies
+Path‑encoding maps concept trajectories to unique prime products $\pi(P)=\prod p_i^{n_i}$.  The path length satisfies
 \begin{equation}
   |P|\;\le\;O\bigl(\log \pi(P)\bigr),
 \end{equation}
-providing asymptotically optimal storage (\cite{PathEncoding}).
+providing asymptotically optimal storage\cite{PathEncoding}.
 
 \section{Discussion and Future Work}\label{sec:future}
 Links between semantic and physical bounds suggest experimental tests:
 \begin{enumerate}
-  \item Measure drift suppression in InterferoShell prototypes.
+  \item Measure algorithmic time‑dilation effects in high‑complexity quantum circuits.
   \item Investigate Hawking‑like emission at semantic black‑hole horizons where $\rho\to\infty$.
-  \item Extend computational relativity metrics to non‑commutative graph geometries.
+  \item Extend computational‑relativity metrics to non‑commutative graph geometries.
 \end{enumerate}
 
-\bigskip\noindent\textbf{Take‑away.}\;Physical interaction, algorithmic complexity, and semantic structure obey the same limiting principles, unifying FIL with fundamental physics.
+\bigskip\noindent\textbf{Take‑away.}\;Physical interaction, algorithmic complexity, and semantic structure obey the same limiting principles, unifying FIL with foundational physics.
 
 \clearpage
