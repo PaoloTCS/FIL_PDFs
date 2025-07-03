@@ -1,4 +1,4 @@
-# FIL_PDFs Catalog  (35 files)
+# FIL_PDFs Catalog  (36 files)
 
 | # | PDF | Pages | First-line snippet | Tags |
 |---|-----|-------|--------------------|------|
@@ -19,21 +19,22 @@
 | 15 | Graph Specification.pdf | 1 | 1 F ractal Knowledge Graph Specification | foundations |
 | 16 | Graph_Specification.pdf | 2 | Discussion on Nibbler Algorithm and Fractal Knowledge Graphs | foundations |
 | 17 | GrokReply1.pdf | 2 | Discussion on Nibbler Algorithm and F ractal Knowledge Graphs | foundations |
-| 18 | Grok_reply_1.pdf | 2 | Morning Discussion on Fractal Dimension and Language | foundations |
-| 19 | Integration_Discovery_Invention_UIL_Framework.pdf | 5 | Integration of the Discovery-Invention Spectrum | foundations |
-| 20 | Mathematical Modeling of Lensing Effects in the InterferoShell.pdf | 10 | Mathematical Modeling of Lensing Effects in the | foundations |
-| 21 | Mathematical Theory of Observational Influence Fields- From Big Bang Perturbations to Semantic Cellular Automata.pdf | 8 | 1 | physical |
-| 22 | Nibbler Primordial Operations and Hierarchical Learning.pdf | 3 | Comments on Nibbler Primordial Operations and Hierarchical | foundations |
-| 23 | Nibbler1.pdf | 3 | Discussion: Nibbler’s Primordial Operations | foundations |
-| 24 | ObservationComputation-Claude.pdf | 8 | 1 | computational |
-| 25 | Particle_Physics_and_Information.pdf | 2 | Particle Interactions and the Structure of Information | physical |
-| 26 | Path-Encoding-Draft2.pdf | 3 | Reﬁning Path Encoding within the FIL Framework: | foundations |
-| 27 | PerturbationCellularAutomata.pdf | 7 | Mathematical Theory of Observational Influence Fields: | foundations |
-| 28 | SSR_Stabilization.pdf | 7 | Semantic Shadow Reconstruction for AI Stabilization | foundations |
-| 29 | SSR_Stabilization2.pdf | 0 | Error: EOF marker not found | foundations |
-| 30 | SemanticProbabilityChans.pdf | 3 | Semantic Probability Chains and Bayesian Equivalence | foundations |
-| 31 | Semantic_Probability_and_Voronoi.pdf | 2 | Semantic Probability Chains and Multidimensional Voronoi | foundations |
-| 32 | fractal_dimensions.pdf | 2 | Discussion on Fractal Dimension, Language Unification, and | foundations |
-| 33 | intro1.pdf | 2 | Towards a Fundamental Language: | foundations |
-| 34 | intro2.pdf | 2 | Towards a Fundamental Language: | foundations |
-| 35 | main10.pdf | 14 | Fundamental Interaction Language | foundations |
+| 18 | Grok_Mathematical Derivation and Experimental Design.pdf | 4 | Excellent. Let’s proceed. This is where the theory confronts reality and rigor. | foundations |
+| 19 | Grok_reply_1.pdf | 2 | Morning Discussion on Fractal Dimension and Language | foundations |
+| 20 | Integration_Discovery_Invention_UIL_Framework.pdf | 5 | Integration of the Discovery-Invention Spectrum | foundations |
+| 21 | Mathematical Modeling of Lensing Effects in the InterferoShell.pdf | 10 | Mathematical Modeling of Lensing Effects in the | foundations |
+| 22 | Mathematical Theory of Observational Influence Fields- From Big Bang Perturbations to Semantic Cellular Automata.pdf | 8 | 1 | physical |
+| 23 | Nibbler Primordial Operations and Hierarchical Learning.pdf | 3 | Comments on Nibbler Primordial Operations and Hierarchical | foundations |
+| 24 | Nibbler1.pdf | 3 | Discussion: Nibbler’s Primordial Operations | foundations |
+| 25 | ObservationComputation-Claude.pdf | 8 | 1 | computational |
+| 26 | Particle_Physics_and_Information.pdf | 2 | Particle Interactions and the Structure of Information | physical |
+| 27 | Path-Encoding-Draft2.pdf | 3 | Reﬁning Path Encoding within the FIL Framework: | foundations |
+| 28 | PerturbationCellularAutomata.pdf | 7 | Mathematical Theory of Observational Influence Fields: | foundations |
+| 29 | SSR_Stabilization.pdf | 7 | Semantic Shadow Reconstruction for AI Stabilization | foundations |
+| 30 | SSR_Stabilization2.pdf | 0 | Error: EOF marker not found | foundations |
+| 31 | SemanticProbabilityChans.pdf | 3 | Semantic Probability Chains and Bayesian Equivalence | foundations |
+| 32 | Semantic_Probability_and_Voronoi.pdf | 2 | Semantic Probability Chains and Multidimensional Voronoi | foundations |
+| 33 | fractal_dimensions.pdf | 2 | Discussion on Fractal Dimension, Language Unification, and | foundations |
+| 34 | intro1.pdf | 2 | Towards a Fundamental Language: | foundations |
+| 35 | intro2.pdf | 2 | Towards a Fundamental Language: | foundations |
+| 36 | main10.pdf | 14 | Fundamental Interaction Language | foundations |
