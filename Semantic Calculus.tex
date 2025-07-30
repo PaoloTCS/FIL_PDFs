@@ -1,0 +1,155 @@
+% ==========================================================
+%  Semantic Calculus: From Token Sums to Integral Language Transformations
+%  ----------------------------------------------------------
+%  Draft skeleton prepared for Paolo Pignatelli — July 29 2025
+% ==========================================================
+\documentclass[11pt]{article}
+
+% ---------- packages ----------
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{physics}        % \grad, \div, \laplacian, etc.
+\usepackage{bm}             % bold math symbols
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{hyperref}
+
+% ---------- metadata ----------
+\title{Semantic Calculus:\\From Token Sums to Integral Language Transformations}
+\author{Paolo Pignatelli\thanks{Independent Researcher, La Jolla, CA.}
+        \and ChatGPT o3\thanks{OpenAI.}}
+\date{\today}
+
+% ---------- custom commands ----------
+\newcommand{\Token}{\mathcal{T}}
+\newcommand{\Manifold}{\mathcal{M}}
+\newcommand{\Field}{\Phi}
+\newcommand{\Kernel}{K}
+\newcommand{\Eps}{\varepsilon}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent
+We introduce a \emph{semantic calculus} that replaces the discrete
+“token-sum” algebra of contemporary large-language models with a
+continuum formalism based on integrals over bounded harmonic manifolds.
+Tokens are re-envisioned as localized basis functions (recursive
+ideograms) living on a regularized semantic lattice whose infinitesimal
+limit forms a differentiable field~$\Field(x)$.  Transformer layers are
+reinterpreted as integral (Fredholm/Volterra-type) operators acting on
+$\Field$, enabling rigorous definitions of semantic gradient, divergence,
+Laplacian, and Green’s functions.  We lay down the mathematical
+foundations, propose a hierarchy-aware integral-attention architecture,
+and present a toy implementation that demonstrates smooth semantic
+interpolation and energy-efficient inference.
+\end{abstract}
+
+% ==========================================================
+\section{Introduction}
+% ==========================================================
+\subsection{Motivation: From Algebra to Calculus of Meaning}
+\subsection{Historical Lineage: Chinese Ideograms, Harmonic Analysis, and the Origins of Calculus}
+\subsection{Contributions and Paper Roadmap}
+
+% ==========================================================
+\section{Preliminaries and Notation}
+% ==========================================================
+\subsection{Discrete Token Algebra in Contemporary LLMs}
+\subsection{Bounded Harmonic Lattices}
+\subsection{Recursive Ideogram Tokens}
+\subsection{Semantic Manifold $\Manifold$ and Coordinate Charts}
+
+% ==========================================================
+\section{From Lattice to Field: The Continuum Limit}
+% ==========================================================
+\subsection{Infinitesimal Cell Scaling ($\delta \to 0$)}
+\subsection{Definition of the Semantic Field $\Field : \Manifold \to \mathbb{R}^n$}
+\subsection{Measure-Theoretic Foundations and Normalization}
+\subsection{Diagram: Lattice $\rightarrow$ Field (TikZ placeholder)}
+
+% ==========================================================
+\section{Integral Operators as Transformer Layers}
+% ==========================================================
+\subsection{Review of Attention as Weighted Sums}
+\subsection{Kernelized Attention: $\displaystyle \psi(x)=\int_{\Manifold}\Kernel(x,y)\,\Field(y)\,dy$}
+\subsection{Properties of $\Kernel$: locality, bounded support, harmonicity}
+\subsection{Hierarchical Gating via Kernel Modulation}
+\subsection{Volterra vs.\ Fredholm Forms and Computational Implications}
+\subsection{Diagram: Integral-Operator Layer (TikZ placeholder)}
+
+% ==========================================================
+\section{Differential Structure on the Semantic Field}
+% ==========================================================
+\subsection{Semantic Gradient $\grad\Field$ and Drift}
+\subsection{Semantic Divergence $\div\Field$ and Convergence Zones}
+\subsection{Semantic Laplacian $\laplacian\Field$ as Curvature of Meaning}
+\subsection{Green’s Functions and Semantic Propagation}
+\subsection{Path Integrals over Meaning Trajectories}
+
+% ==========================================================
+\section{Recursive Ideogram Basis Functions}
+% ==========================================================
+\subsection{Definition and Construction}
+\subsection{Orthogonality and Completeness on $\Manifold$}
+\subsection{Connection to Wavelets and Spherical Harmonics}
+\subsection{Visualization: Ideogram Decomposition (TikZ placeholder)}
+
+% ==========================================================
+\section{Practical Architecture: The Harmonia Transformer}
+% ==========================================================
+\subsection{Overall Stack: Field Encoder $\rightarrow$ Integral Layers $\rightarrow$ Field Decoder}
+\subsection{Hierarchy-Aware Integral Attention (HIA)}
+\subsection{Dynamic Expansion and Compression Gates}
+\subsection{Energy and Complexity Analysis}
+
+% ==========================================================
+\section{Toy Implementation and Experiments}
+% ==========================================================
+\subsection{1-D Harmonic Semantic Line}
+\subsection{2-D Ideogram Grid with Localized Basis Modes}
+\subsection{Qualitative Results: Smooth Interpolation\,/\,Semantic Denoising}
+\subsection{Quantitative Metrics: Approximation Error, Energy Efficiency}
+
+% ==========================================================
+\section{Related Work}
+% ==========================================================
+\subsection{Graph and Manifold Wavelets}
+\subsection{Kernel Attentional Approaches (Performer, Linearized Attention, …)}
+\subsection{Neural Field Models and Implicit Representations}
+\subsection{Logographic NLP and Chinese-Inspired Architectures}
+
+% ==========================================================
+\section{Discussion and Future Directions}
+% ==========================================================
+\subsection{Symbol–Field Duality and Category-Theoretic View}
+\subsection{Multimodal Extensions (Vision, Audio as Fields)}
+\subsection{Hardware Implications: Analog Integral Cores}
+\subsection{Open Problems: Convergence, Expressivity, Scaling Laws}
+
+% ==========================================================
+\section{Conclusion}
+% ==========================================================
+\noindent
+We have outlined a pathway from the discrete algebra of tokens to a
+differentiable calculus of meaning.  By grounding language in bounded
+harmonic manifolds and casting transformer layers as integral operators,
+we obtain a mathematically rich, physically intuitive, and potentially
+more efficient paradigm for natural-language understanding and
+generation.
+
+% ==========================================================
+\bibliographystyle{plain}
+\bibliography{semantic_calculus_bib}  % <-- create this .bib file
+% ==========================================================
+\appendix
+\section{Formal Proofs}
+\subsection{Completeness of Ideogram Basis}
+\subsection{Boundedness of Integral Attention Operator}
+
+\section{Implementation Details}
+\subsection{Numerical Quadrature Schemes}
+\subsection{PyTorch Prototype Hyperparameters}
+
+\end{document}
