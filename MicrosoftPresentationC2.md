@@ -546,7 +546,7 @@ Microsoft has the unique opportunity to lead this revolution, transforming not j
 *"The universe computes at the speed of thermodynamics. We can now compute with the universe."*
 
 **Contact**: Paolo Pignatelli  
-**Email**: [Contact information]  
+**Email**: [Paolo@VerbumTechnologies.com]  
 **Availability**: Immediate
 
 ---
