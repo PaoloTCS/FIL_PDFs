@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{xcolor}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\KL}{\mathrm{KL}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\manifold}{M^d}
+\newcommand{\bv}[1]{\boldsymbol{#1}}
+\newcommand{\ang}[1]{\left\langle #1 \right\rangle}
+\title{\textbf{Flow-Field Internal Representation for Language:}\\ Energy, Landauer, and Graph-to-Geometry Mapping}
+\author{Draft prepared for Paolo Pignatelli (\emph{Independent Researcher})}
+\date{Version v1.0}
+\begin{document}
+\maketitle
+\begin{abstract}
+We propose an internal representation (IR) that sits between two large-language-model (LLM) stages. The IR is a high-dimensional flow field evolving on a manifold $\manifold$, sculpted by a potential $\Phi$ derived from a directed knowledge graph. Dynamics are Fokker--Planck/Langevin-like, so ``noising'' and ``denoising'' are physical diffusion rather than simulated CUDA loops. The read-out is a set of physically measurable observables (e.g., local density, gradient, vorticity) linearly mapped back to symbols for the downstream LLM. This makes the IR an analog reservoir computer whose energy can, in principle, approach the Landauer limit. We formalize the graph-to-geometry mapping, the high-dimensional flow equations, observables and read-out, and energy bookkeeping with Landauer/Jarzynski/Crooks connections, and relate each to modules from \emph{Theoretical Work FIL}.
+\end{abstract}
+\section{Placement in the overall pipeline}
+\begin{center}
+\texttt{LLM-in $\to$ ENCODER $\to$ FLOW-FIELD IR $\to$ DECODER $\to$ LLM-out}
+\end{center}
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{LLM-in:} upstream transformer encodes the prompt/context to a latent $x\in\R^n$.
+  \item \textbf{Encoder $\mathcal{I}$:} injects a local disturbance $\rho(\xi,0)=\rho_0(\xi)+\mathcal{I}(x)$ into $\manifold$.
+  \item \textbf{Flow-Field IR:} $\rho(\xi,t)$ evolves under diffusion and a graph-derived potential $\Phi$.
+  \item \textbf{Read-out/Decoder:} observables $O_k[\rho]$ are linearly combined to produce a semantic vector $z$, consumed by \emph{LLM-out}.
+\end{itemize}
+\section{Dimensions for the semantic manifold $\manifold$}
+We model semantics as flow in a high-dimensional space. Candidate axes (with tunable ``temperatures'' $\beta_i$ controlling mixing) include:
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Sensory base:} $(x,y)$ (vision), $t$ (time), $\lambda$ (colour), $\phi$ (pitch/phoneme).
+  \item \textbf{Sub-channels:} CIELAB (L*, a*, b*), temporal bands (e.g., 20\,Hz vs 2\,kHz).
+  \item \textbf{Derived percepts:} edges, faces, syllable-ID, chord class.
+  \item \textbf{Rational strata:} proof-depth $\pi\in\mathbb{N}$, axiom IDs, algebraic tags (cold/near-reversible).
+\end{itemize}
+Hot axes (large diffusion $D_i$, small $\beta_i$) mix freely; cold axes (small $D_i$, large $\beta_i$) trace logical proof lines.
+\section{Knowledge graph to geometric potential $\Phi$}
+Let $G=(V,E)$ be the directed knowledge graph; use prime-of-primes encoding to assign each node $v\in V$ a unique integer $\pi(v)$. Map $\pi(v)$ to lattice coordinate $\bv{x}_v\in \manifold$; give node $v$ a kernel $K_v(\xi)$ with anisotropic covariance $\Sigma_v$ and scale $\sigma_v$ set by semantic inertia $w_v$. The obstacle/potential is
+\begin{equation}
+\Phi(\xi) \;=\; \sum_{v\in V} w_v \exp\!\Big(-\tfrac{1}{2}\,\ang{\xi-\bv{x}_v,\ \Sigma_v^{-1}(\xi-\bv{x}_v)}\Big).
+\end{equation}
+High $\Phi$ behaves like a solid island (no-slip), low $\Phi$ as open water. Edges $e_{uv}$ are carved as low-$\Phi$ tubes along geodesics from $\bv{x}_u$ to $\bv{x}_v$ with width proportional to edge weight $k_{uv}$.
+\paragraph{FIL cross-link.} $\Phi$ realizes truth-determinants/attractors as deep wells, and hallucination pockets as cul-de-sacs (high dwell-time regions). Precomputed wavefronts correspond to gradient flows $-\nabla\Phi$ seeded at attractors.
+\section{Dynamics: continuity and drift--diffusion on $\manifold$}
+We evolve $\rho(\xi,t)$ (belief mass) under metric $g_{ij}$, diffusion tensor $D^{ij}$, and potential $\Phi$:
+\begin{align}
+\partial_t \rho + \nabla_i(\rho\,v^i)&=0,\\
+v^i &= -\,D^{ij}\Big(\nabla_j \log \rho \;+\; \beta_j\,\nabla_j \Phi\Big), \qquad D^{ij}=D_0\,g^{ij}.
+\end{align}
+Interpretation: $\rho$ is belief mass; flux $\rho v$ is reasoning energy; obstacle gradient $\nabla\Phi$ encodes graph topology.
+\paragraph{Flow--semantics correspondences.}
+\begin{itemize}[leftmargin=2em]
+  \item Kármán vortex street behind a wide island $\Rightarrow$ alternating certainty/uncertainty (belief drift).
+  \item Recirculation bubble $\Rightarrow$ dead-end subgraph / hallucination pocket.
+  \item Jet reattachment through a narrow tube $\Rightarrow$ low-entropy, highly reliable transition.
+  \item Strouhal $St=fD/U$ $\Rightarrow$ semantic resonance invariant.
+\end{itemize}
+\section{Read-out: flow observables to symbols}
+Choose probe points $\{\xi_k\}_{k=1}^K$. Measure
+\begin{equation}
+\mathbf{y}(t) \;=\; \big(\rho(\xi_k),\ \partial_t\rho(\xi_k),\ \nabla\rho(\xi_k)\big)_{k=1}^K.
+\end{equation}
+Aggregate over a window and apply a linear read-out
+\begin{equation}
+\hat{\bv{z}} \;=\; W_{\text{out}}\int_{t-\tau}^{t}\mathbf{y}(\tau)\,d\tau,
+\end{equation}
+with $W_{\text{out}}$ learned via ridge regression. The physics performs the expensive time-stepping.
+\section{Energy bookkeeping and GPU comparison}
+Dissipation channels:
+\begin{itemize}[leftmargin=2em]
+  \item Injection/drive: $P_{\text{pump}} = Q\,\Delta P$.
+  \item Viscous dissipation: $W_{\text{visc}} \approx \mu \int \omega^2\, dV\, dt$, $\omega=\nabla\times \bv{u}$.
+  \item Control fields: work $\int \bv{f}\cdot d\bv{x}$ for electro-osmotic/magnetic bias.
+  \item Sensors: ADC-dominated; can be $\mathcal{O}(\text{pJ})$/sample if multiplexed.
+\end{itemize}
+Order-of-magnitude sketch (per 512$\times$512 image at 1000 steps): GPU $\sim 200$\,J; micro-flow IR $\sim 1$\,mJ; Landauer floor $\sim$ pJ for $\mathcal{O}(10^2\!-\!10^3)$ effective bits.
+\section{Landauer, correlations, and non-equilibrium}
+\paragraph{Classical Landauer (uncorrelated erase).}
+Erasing one bit at temperature $T$ dissipates at least
+\begin{equation}
+E_L = k_B T \ln 2.
+\end{equation}
+\paragraph{Correlation-aware Landauer.}
+For a bit $X$ correlated with $Y$,
+\begin{equation}
+W_{\min} = k_B T\big(\ln 2 - I(X;Y)\big).
+\end{equation}
+Perfectly reconstructible state ($I=1$ bit) implies no dissipative cost --- relevant in linguistic contexts where symbols are recoverable from the prompt.
+\paragraph{Non-equilibrium overhead (Jarzynski/Crooks).}
+Finite-time protocols incur extra dissipation quantified by work fluctuations; faster schedules increase variance and push energy above $E_L$. In the IR, hotter diffusion and sensory axes increase this overhead; cold logical axes can be run quasi-reversibly.
+\section{Crosswalk to \emph{Theoretical Work FIL}}
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Semantic Action Principle:} define $S[\rho]$ via dissipation integrals; minimization corresponds to stable low-work flows.
+  \item \textbf{Belief graph \& truth determinants:} attractor wells in $\Phi$; precomputed wavefronts as gradient flows.
+  \item \textbf{Semantic inertia:} node mass $w_v$ sets kernel widths $\sigma_v$, slowing local erasure and reducing non-eq penalties.
+  \item \textbf{ELP field:} local variability of $\rho$ (e.g., $\mathrm{Var}[\rho|\xi]$) or energy density $\rho\,\|\nabla\log\rho\|^2$.
+  \item \textbf{Cardinality Cascade / energy constraint:} bandwidth allocation via $D^{ij}$ and $\beta_i$ under fixed power.
+  \item \textbf{Voronoi/Delaunay semantics:} obstacle kernels partition the manifold; edge tubes trace connectors.
+  \item \textbf{Minkowski cones / shadow regions:} anisotropic $g_{ij}$ + axis-dependent $D_i$ define reachable cones and long dwell-time shadows.
+  \item \textbf{Nibbler / path correction:} first-passage metrics implement shortest corrective routes from F to T regions.
+  \item \textbf{Semantic double-slit:} interference-like wakes in vorticity between competing attractors.
+\end{itemize}
+\section{Minimal working example}
+Axes: $(x,y,\lambda,t,\pi)$; motif: $A\to L\to T$ vs competing false attractor $F$. Deep wells at $T$ and $F$; tube $A\to L\to T$ wider than $A\to F$. Inject at $A$, evolve for $\tau\approx 200$\,ms equivalent, read out $K{=}256$ probes. Outputs: probability of reaching $T$ vs $F$, entropy production, average proof-depth. Expected signature: dominant jet to $T$, weak recirculation near $F$.
+\section{Training and adaptation}
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Hybrid loop (software first):} fix $\Phi$ from the graph; evolve $\rho$ via lattice-Boltzmann; train encoder/decoder in PyTorch.
+  \item \textbf{In-hardware adaptation:} local Hebbian-like rule on $\Phi$: grow obstacle radii in regions of high dissipation; shrink elsewhere.
+  \item \textbf{Energy-aware schedules:} cold proof-axis ($\beta_\pi\!\to\!\infty$, $D_\pi\!\to\!0$) for near-reversible steps; hot sensory axes for generalization, then cool to lock-in.
+\end{enumerate}
+\section{Notation}
+$\xi\in \manifold$: semantic coordinates; $\rho(\xi,t)$: belief mass; $\Phi(\xi)$: obstacle potential; $g_{ij}$: metric; $D^{ij}=D_0 g^{ij}$: diffusion tensor; $\beta_i$: semantic temperature per axis; $v^i$: drift velocity; $O_k[\rho]$: observables; $W_{\text{out}}$: read-out; $E_L=k_BT\ln 2$: Landauer limit; $I(X;Y)$: mutual information.
+\section{Open research agenda}
+\begin{enumerate}[leftmargin=2em]
+  \item Energy--information calculus: prove $\dot Q = \sum_i \beta_i\,\dot I_i$ and bound work per sample.
+  \item Action functional $S[\rho]$: derive a FIL-compatible action with Euler--Lagrange equations recovering the drift--diffusion PDE.
+  \item Resolvent/spectral mapping: tie dominant flow modes to graph motifs (resonances, Strouhal invariants).
+  \item LBM on curved $\manifold$: implement sparse $5$--$10$D LBM with metric $g_{ij}$.
+  \item 3-pillar PDMS chip: (T, F, Attractor) with micro-PIV read-out; measure energy/sample vs a GPU baseline.
+\end{enumerate}
+\bigskip
+\noindent\textbf{Acknowledgements.} This draft integrates ongoing discussions from \emph{Theoretical Work FIL}.
+\end{document}
