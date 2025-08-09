@@ -1,4 +1,4 @@
-# FIL_PDFs Catalog  (41 files)
+# FIL_PDFs Catalog  (42 files)
 
 | # | PDF | Pages | First-line snippet | Tags |
 |---|-----|-------|--------------------|------|
@@ -16,30 +16,31 @@
 | 12 | Computational Relativity_ A Framework for Information Processing in Spacetime copy.pdf | 8 | Computational Relativity: A Framework for Information Processing | computational |
 | 13 | Computational Spacetime Geometry.pdf | 9 | Chapter 1 | computational |
 | 14 | FL_Field_MetaLaw_to_Quantization.pdf | 3 | Fundamental Language: From Meta-Law to | foundations |
-| 15 | Graph Specification.pdf | 1 | 1 F ractal Knowledge Graph Specification | foundations |
-| 16 | Graph_Specification.pdf | 2 | Discussion on Nibbler Algorithm and Fractal Knowledge Graphs | foundations |
-| 17 | GrokReply1.pdf | 2 | Discussion on Nibbler Algorithm and F ractal Knowledge Graphs | foundations |
-| 18 | Grok_Mathematical Derivation and Experimental Design.pdf | 4 | Excellent. Let’s proceed. This is where the theory confronts reality and rigor. | foundations |
-| 19 | Grok_reply_1.pdf | 2 | Morning Discussion on Fractal Dimension and Language | foundations |
-| 20 | Integration_Discovery_Invention_UIL_Framework.pdf | 5 | Integration of the Discovery-Invention Spectrum | foundations |
-| 21 | Mathematical Modeling of Lensing Effects in the InterferoShell.pdf | 10 | Mathematical Modeling of Lensing Effects in the | foundations |
-| 22 | Mathematical Theory of Observational Influence Fields- From Big Bang Perturbations to Semantic Cellular Automata.pdf | 8 | 1 | physical |
-| 23 | NeuralPathIntegrals.tex.pdf | 2 | Neural Path Integrals and the Semantic Action Principle | foundations |
-| 24 | NeuralPathIntegralsChatVer2.pdf | 4 | Neural Path Integrals and the Semantic Action | foundations |
-| 25 | Nibbler Primordial Operations and Hierarchical Learning.pdf | 3 | Comments on Nibbler Primordial Operations and Hierarchical | foundations |
-| 26 | Nibbler1.pdf | 3 | Discussion: Nibbler’s Primordial Operations | foundations |
-| 27 | ObservationComputation-Claude.pdf | 8 | 1 | computational |
-| 28 | OpenPathINtegral.pdf | 2 | Neural Path Integrals and the Semantic Action Principle | foundations |
-| 29 | Particle_Physics_and_Information.pdf | 2 | Particle Interactions and the Structure of Information | physical |
-| 30 | Path-Encoding-Draft2.pdf | 3 | Reﬁning Path Encoding within the FIL Framework: | foundations |
-| 31 | PerturbationCellularAutomata.pdf | 7 | Mathematical Theory of Observational Influence Fields: | foundations |
-| 32 | SSR_Stabilization.pdf | 7 | Semantic Shadow Reconstruction for AI Stabilization | foundations |
-| 33 | SSR_Stabilization2.pdf | 0 | Error: EOF marker not found | foundations |
-| 34 | SemanticProbabilityChans.pdf | 3 | Semantic Probability Chains and Bayesian Equivalence | foundations |
-| 35 | Semantic_Flow_IR_Landauer.pdf | 4 | Flow-Field Internal Representation for Language: | foundations |
-| 36 | Semantic_Probability_and_Voronoi.pdf | 2 | Semantic Probability Chains and Multidimensional Voronoi | foundations |
-| 37 | fractal_dimensions.pdf | 2 | Discussion on Fractal Dimension, Language Unification, and | foundations |
-| 38 | intro1.pdf | 2 | Towards a Fundamental Language: | foundations |
-| 39 | intro2.pdf | 2 | Towards a Fundamental Language: | foundations |
-| 40 | main10.pdf | 14 | Fundamental Interaction Language | foundations |
-| 41 | main_Grok.pdf | 4 | Neural Path Integrals and the Semantic Action Principle | foundations |
+| 15 | Flow-Field Internal Representation for Language.pdf | 4 | Flow-Field Internal Representation for Language: | foundations |
+| 16 | Graph Specification.pdf | 1 | 1 F ractal Knowledge Graph Specification | foundations |
+| 17 | Graph_Specification.pdf | 2 | Discussion on Nibbler Algorithm and Fractal Knowledge Graphs | foundations |
+| 18 | GrokReply1.pdf | 2 | Discussion on Nibbler Algorithm and F ractal Knowledge Graphs | foundations |
+| 19 | Grok_Mathematical Derivation and Experimental Design.pdf | 4 | Excellent. Let’s proceed. This is where the theory confronts reality and rigor. | foundations |
+| 20 | Grok_reply_1.pdf | 2 | Morning Discussion on Fractal Dimension and Language | foundations |
+| 21 | Integration_Discovery_Invention_UIL_Framework.pdf | 5 | Integration of the Discovery-Invention Spectrum | foundations |
+| 22 | Mathematical Modeling of Lensing Effects in the InterferoShell.pdf | 10 | Mathematical Modeling of Lensing Effects in the | foundations |
+| 23 | Mathematical Theory of Observational Influence Fields- From Big Bang Perturbations to Semantic Cellular Automata.pdf | 8 | 1 | physical |
+| 24 | NeuralPathIntegrals.tex.pdf | 2 | Neural Path Integrals and the Semantic Action Principle | foundations |
+| 25 | NeuralPathIntegralsChatVer2.pdf | 4 | Neural Path Integrals and the Semantic Action | foundations |
+| 26 | Nibbler Primordial Operations and Hierarchical Learning.pdf | 3 | Comments on Nibbler Primordial Operations and Hierarchical | foundations |
+| 27 | Nibbler1.pdf | 3 | Discussion: Nibbler’s Primordial Operations | foundations |
+| 28 | ObservationComputation-Claude.pdf | 8 | 1 | computational |
+| 29 | OpenPathINtegral.pdf | 2 | Neural Path Integrals and the Semantic Action Principle | foundations |
+| 30 | Particle_Physics_and_Information.pdf | 2 | Particle Interactions and the Structure of Information | physical |
+| 31 | Path-Encoding-Draft2.pdf | 3 | Reﬁning Path Encoding within the FIL Framework: | foundations |
+| 32 | PerturbationCellularAutomata.pdf | 7 | Mathematical Theory of Observational Influence Fields: | foundations |
+| 33 | SSR_Stabilization.pdf | 7 | Semantic Shadow Reconstruction for AI Stabilization | foundations |
+| 34 | SSR_Stabilization2.pdf | 0 | Error: EOF marker not found | foundations |
+| 35 | SemanticProbabilityChans.pdf | 3 | Semantic Probability Chains and Bayesian Equivalence | foundations |
+| 36 | Semantic_Flow_IR_Landauer.pdf | 4 | Flow-Field Internal Representation for Language: | foundations |
+| 37 | Semantic_Probability_and_Voronoi.pdf | 2 | Semantic Probability Chains and Multidimensional Voronoi | foundations |
+| 38 | fractal_dimensions.pdf | 2 | Discussion on Fractal Dimension, Language Unification, and | foundations |
+| 39 | intro1.pdf | 2 | Towards a Fundamental Language: | foundations |
+| 40 | intro2.pdf | 2 | Towards a Fundamental Language: | foundations |
+| 41 | main10.pdf | 14 | Fundamental Interaction Language | foundations |
+| 42 | main_Grok.pdf | 4 | Neural Path Integrals and the Semantic Action Principle | foundations |
