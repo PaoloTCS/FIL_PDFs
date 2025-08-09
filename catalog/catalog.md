@@ -1,4 +1,4 @@
-# FIL_PDFs Catalog  (40 files)
+# FIL_PDFs Catalog  (41 files)
 
 | # | PDF | Pages | First-line snippet | Tags |
 |---|-----|-------|--------------------|------|
@@ -36,9 +36,10 @@
 | 32 | SSR_Stabilization.pdf | 7 | Semantic Shadow Reconstruction for AI Stabilization | foundations |
 | 33 | SSR_Stabilization2.pdf | 0 | Error: EOF marker not found | foundations |
 | 34 | SemanticProbabilityChans.pdf | 3 | Semantic Probability Chains and Bayesian Equivalence | foundations |
-| 35 | Semantic_Probability_and_Voronoi.pdf | 2 | Semantic Probability Chains and Multidimensional Voronoi | foundations |
-| 36 | fractal_dimensions.pdf | 2 | Discussion on Fractal Dimension, Language Unification, and | foundations |
-| 37 | intro1.pdf | 2 | Towards a Fundamental Language: | foundations |
-| 38 | intro2.pdf | 2 | Towards a Fundamental Language: | foundations |
-| 39 | main10.pdf | 14 | Fundamental Interaction Language | foundations |
-| 40 | main_Grok.pdf | 4 | Neural Path Integrals and the Semantic Action Principle | foundations |
+| 35 | Semantic_Flow_IR_Landauer.pdf | 4 | Flow-Field Internal Representation for Language: | foundations |
+| 36 | Semantic_Probability_and_Voronoi.pdf | 2 | Semantic Probability Chains and Multidimensional Voronoi | foundations |
+| 37 | fractal_dimensions.pdf | 2 | Discussion on Fractal Dimension, Language Unification, and | foundations |
+| 38 | intro1.pdf | 2 | Towards a Fundamental Language: | foundations |
+| 39 | intro2.pdf | 2 | Towards a Fundamental Language: | foundations |
+| 40 | main10.pdf | 14 | Fundamental Interaction Language | foundations |
+| 41 | main_Grok.pdf | 4 | Neural Path Integrals and the Semantic Action Principle | foundations |
