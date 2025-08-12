@@ -1,0 +1,196 @@
+\section{Spectral–Path Probability Under Physical Incompleteness}
+\label{sec:spectral-path-prob-PI}
+
+\subsection{Graph-Structured Sample Space and Spectral Modes}
+\label{subsec:sample-graph-spectral}
+
+Let the sample space $(\Omega,\mathcal{F})$ be realized as a finite or $\sigma$-finite directed graph
+$G=(V,E)$ whose vertices $V$ are atomic events/knowledge states and whose directed edges
+$E\subseteq V\times V$ are admissible inference/measurement/causal transitions.
+Let $A\in\{0,1\}^{|V|\times|V|}$ be the adjacency matrix and $D=\mathrm{diag}(\deg v)$ the
+(out-)degree matrix. The (combinatorial) Laplacian is
+\[
+L \;=\; D-A.
+\]
+We use its spectral decomposition
+\[
+L\,u_k=\lambda_k\,u_k,\qquad k=0,\dots,|V|-1,
+\]
+to obtain orthonormal \emph{modes} $\{u_k\}$ and eigenvalues $\{\lambda_k\}$. These modes furnish a
+multi-scale decomposition of probability flow over $\Omega$.
+For an edge $(v_i,v_j)\in E$, define the mode coupling factor
+\begin{equation}
+\phi_k(v_i,v_j)\;=\;u_k(v_i)\,u_k(v_j).
+\label{eq:mode-coupling}
+\end{equation}
+
+\paragraph{FIL kernel weights.}
+Each edge carries a kernel weight $\kappa(v_i,v_j)\in[0,1]$ consistent with the FIL kernel
+decomposition (structural/semantic/temporal/causal components).
+If observations $o$ are attached to edges or nodes, they carry statistical weights $\omega(o)\in\mathbb{R}_+$.
+
+\subsection{Events as Spectral Path Sums}
+\label{subsec:events-as-path-sums}
+
+Let $\mathcal{P}(A)$ denote the set of finite directed paths $p=(v_0\!\to\!\cdots\!\to\!v_n)$ that
+terminate in an event/node $A\in V$. Define the weight of $p$ as
+\begin{equation}
+w(p)\;=\;\Bigg(\prod_{i=0}^{n-1}\kappa(v_i,v_{i+1})\Bigg)
+         \Bigg(\prod_{o\in p}\omega(o)\Bigg)
+         \Bigg(\prod_{i=0}^{n-1}\prod_{k\in \mathsf{modes}(p)}\phi_k(v_i,v_{i+1})\Bigg),
+\label{eq:path-weight}
+\end{equation}
+where $\mathsf{modes}(p)$ is any chosen subset of spectral indices used for mode selection (e.g., all, or a bandpass).
+
+\begin{definition}[Spectral–path probability]
+\label{def:spectral-path-prob}
+For an event $A\in V$,
+\[
+P(A)\;=\;\sum_{p\in\mathcal{P}(A)} w(p).
+\]
+For a refinement $A=\bigsqcup_{j}A^{(j)}$ (disjoint or overlapping),
+\(
+P\!\left(A^{(j)}\right)=\sum_{p\in\mathcal{P}(A^{(j)})}w(p).
+\)
+If path families overlap, inclusion–exclusion or Möbius inversion on the path lattice resolves double counting.
+\end{definition}
+
+\subsection{Thermodynamic Resource Bound and Accessible Probability}
+\label{subsec:thermo-bound}
+
+Let $T$ denote the computational/semantic temperature and
+\begin{equation}
+c_{\mathrm{comp}}(T)=\frac{2k_B T\ln 2}{\pi\hbar}
+\label{eq:ccomp}
+\end{equation}
+be the \emph{computational light speed}. Each irreversible step has minimum energy
+\begin{equation}
+E_{\mathrm{step}}=k_B T\ln 2.
+\label{eq:landauer-step}
+\end{equation}
+Given an energy budget $E_{\mathrm{tot}}$ (or, equivalently, an operation budget
+$N_{\max}=\lfloor E_{\mathrm{tot}}/E_{\mathrm{step}}\rfloor$), define the \emph{physically accessible} path set
+\[
+\mathcal{P}_{\le N_{\max}}(A) \;=\; \{\,p\in\mathcal{P}(A)\,:\, \#\mathrm{steps}(p)\le N_{\max}\,\}.
+\]
+
+\begin{definition}[Physically accessible probability]
+\label{def:accessible-prob}
+\begin{equation}
+P_{\mathrm{acc}}(A;E_{\mathrm{tot}},T)
+\;=\;
+\sum_{p\in\mathcal{P}_{\le N_{\max}}(A)} w(p),
+\qquad
+N_{\max}=\Big\lfloor \frac{E_{\mathrm{tot}}}{k_B T\ln 2}\Big\rfloor.
+\label{eq:Pacc}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Physically bounded probability evaluation]
+\label{thm:phys-bounded-prob}
+For any finite $E_{\mathrm{tot}}$ and finite time window $\tau$, a system can enumerate
+at most $\min\!\big\{N_{\max},\,\lfloor c_{\mathrm{comp}}(T)\,\tau\rfloor\big\}$ path steps.
+Hence $P_{\mathrm{acc}}(A;E_{\mathrm{tot}},T)$ underestimates $P(A)$ unless the residual tail
+$\sum_{p\notin\mathcal{P}_{\le N_{\max}}(A)} w(p)$ is zero. Moreover, as $T\!\to\!0$ (thus $c_{\mathrm{comp}}\!\to\!0$),
+$P_{\mathrm{acc}}$ can decrease even when $E_{\mathrm{tot}}$ is fixed, exhibiting a thermodynamic
+incompleteness of probability evaluation.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Each irreversible step costs at least $E_{\mathrm{step}}$ by Landauer.
+Thus the step budget is $N_{\max}$. Independently, Bremermann implies a rate cap $c_{\mathrm{comp}}(T)$,
+so in time $\tau$ at most $c_{\mathrm{comp}}(T)\tau$ steps can be realized. The remainder follows by monotonicity
+of partial sums over nonnegative weights $w(p)$. As $T\!\to\!0$, both $E_{\mathrm{step}}$ increases
+(per bit erased relative to fixed budget) and $c_{\mathrm{comp}}(T)\to 0$, shrinking the accessible set.
+\end{proof}
+
+\subsection{Distance-Weighted (Geodesic) Form for Physical Inference}
+\label{subsec:geodesic-form}
+
+For measurement problems with physical lengths $d(v_i,v_j)\ge 0$ on edges, define
+$\mathrm{Length}(p)=\sum_i d(v_i,v_{i+1})$ and introduce a geodesic attenuation:
+\begin{equation}
+P_{\mathrm{geo}}(A;\beta)
+\;=\;
+\sum_{p\in\mathcal{P}(A)} e^{-\beta\,\mathrm{Length}(p)}\, w(p),
+\label{eq:Pgeo}
+\end{equation}
+with inverse-temperature $\beta$ set by noise/SNR or an observational prior. The accessible
+version $P_{\mathrm{geo,acc}}$ replaces $\mathcal{P}(A)$ by $\mathcal{P}_{\le N_{\max}}(A)$.
+
+\subsection{Mode Selection and Stability}
+\label{subsec:mode-selection}
+
+High-$\lambda_k$ modes are typically oscillatory/noise-like on $G$; low modes capture large-scale structure.
+Let $\Pi_{\mathcal{K}}$ project to a band $\mathcal{K}\subseteq\{0,\dots,|V|-1\}$ and redefine
+$\mathsf{modes}(p)=\mathcal{K}$ in~\eqref{eq:path-weight}. Then
+\begin{equation}
+P_{\mathcal{K}}(A)
+=
+\sum_{p\in\mathcal{P}(A)}
+\Bigg(\prod_{i}\kappa(v_i,v_{i+1})\Bigg)
+\Bigg(\prod_{o\in p}\omega(o)\Bigg)
+\prod_{i}\prod_{k\in\mathcal{K}} \phi_k(v_i,v_{i+1}).
+\label{eq:bandpass-P}
+\end{equation}
+Choosing $\mathcal{K}$ by validation (e.g., minimizing held-out error or maximizing bridge efficiency)
+stabilizes estimates under budgeted enumeration.
+
+\subsection{Cardinality Cascade Coupling}
+\label{subsec:cardinality-cascade-coupling}
+
+Let $\tau$ be the wall-clock time available. The maximum number of irreversible steps obeys
+\begin{equation}
+N_{\max}(\tau,T) \;\le\; \left\lfloor c_{\mathrm{comp}}(T)\,\tau \right\rfloor,
+\label{eq:Nmax-time}
+\end{equation}
+and the cumulative \emph{distinguishable} path mass is limited by the entropy budget
+under the Cardinality Cascade:
+\begin{equation}
+\sum_{p\in\mathcal{P}_{\le N_{\max}}(A)} 1
+\;\;\lesssim\;\;
+\exp\!\left(\frac{1}{k_B}\int_0^\tau c_{\mathrm{comp}}(T(t))\,dt\right).
+\label{eq:cascade-cap}
+\end{equation}
+Equations~\eqref{eq:Pacc}–\eqref{eq:cascade-cap} explicitly fuse spectral–path probability with the
+thermodynamic generation limits.
+
+\subsection{Operational Algorithm (Budget-Aware Nibbler)}
+\label{subsec:algo}
+
+\begin{algorithm}[H]
+\caption{Budget-Aware Spectral Path Estimator}
+\label{alg:budget-nibbler}
+\begin{algorithmic}[1]
+\Require Graph $G=(V,E)$, kernels $\kappa$, observation weights $\omega$, modes $\{u_k\}$,
+band $\mathcal{K}$, budget $(E_{\mathrm{tot}},T)$ or $(\tau,T)$.
+\State Compute $N_{\max} \leftarrow \min\!\Big\{\lfloor E_{\mathrm{tot}}/(k_BT\ln2)\rfloor,\,\lfloor c_{\mathrm{comp}}(T)\tau\rfloor\Big\}$
+\State Initialize frontier $\mathcal{F}\leftarrow$ paths of length $1$ into $A$; $S\leftarrow 0$
+\While{frontier nonempty \textbf{and} total steps $< N_{\max}$}
+  \State Pop $p$ with highest score (e.g.\ marginal $w(p)$ or value/cost)
+  \State $S\leftarrow S + w(p)$
+  \State Push predecessors/extensions of $p$ truncated to maintain acyclicity/budget
+\EndWhile
+\State \Return $S$ as $P_{\mathrm{acc}}(A)$ (or $P_{\mathcal{K},\mathrm{acc}}(A)$ with bandpass)
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Interpretation and Insertion Points}
+\label{subsec:interpretation-insertion}
+
+\paragraph{Thermodynamics Incompleteness.}
+Theorem~\ref{thm:phys-bounded-prob} is the probability analogue of the Physical Incompleteness
+result: even when logical measure $P(A)$ is well-defined, only the budgeted $P_{\mathrm{acc}}(A)$ is
+physically realizable. As $T$ varies, the accessible cone of paths expands/contracts in direct
+analogy to a Minkowski cone on $(\mathrm{steps},\mathrm{time})$ with slope $c_{\mathrm{comp}}(T)$.
+
+\paragraph{Star distances.}
+Use \eqref{eq:Pgeo} with edges carrying photometric/parallax/redshift likelihood lengths,
+and select $\mathcal{K}$ to emphasize instrument-specific modes. The energy/time budget
+models limited telescope time/SNR; the algorithm returns a \emph{budget-corrected} posterior mass.
+
+\paragraph{Cross-references.}
+Replace your scalar $P(\cdot)$ in downstream lemmas with $P_{\mathrm{acc}}(\cdot)$ when claims are about
+physically realizable inference. Cite \eqref{eq:ccomp} where $c_{\mathrm{comp}}$ is first introduced;
+tie \eqref{eq:cascade-cap} to the Cardinality Cascade section; and reference the FIL kernel
+definitions when instantiating $\kappa$ and $\omega$.
