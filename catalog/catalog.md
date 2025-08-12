@@ -1,4 +1,4 @@
-# FIL_PDFs Catalog  (43 files)
+# FIL_PDFs Catalog  (44 files)
 
 | # | PDF | Pages | First-line snippet | Tags |
 |---|-----|-------|--------------------|------|
@@ -40,8 +40,9 @@
 | 36 | Semantic_Flow_IR_Landauer.pdf | 4 | Flow-Field Internal Representation for Language: | foundations |
 | 37 | Semantic_Observation_Soa.pdf | 2 | FIL Reference Sheet (Partial Draft) | foundations |
 | 38 | Semantic_Probability_and_Voronoi.pdf | 2 | Semantic Probability Chains and Multidimensional Voronoi | foundations |
-| 39 | fractal_dimensions.pdf | 2 | Discussion on Fractal Dimension, Language Unification, and | foundations |
-| 40 | intro1.pdf | 2 | Towards a Fundamental Language: | foundations |
-| 41 | intro2.pdf | 2 | Towards a Fundamental Language: | foundations |
-| 42 | main10.pdf | 14 | Fundamental Interaction Language | foundations |
-| 43 | main_Grok.pdf | 4 | Neural Path Integrals and the Semantic Action Principle | foundations |
+| 39 | Untitled.pdf | 0 | Error: EOF marker not found | foundations |
+| 40 | fractal_dimensions.pdf | 2 | Discussion on Fractal Dimension, Language Unification, and | foundations |
+| 41 | intro1.pdf | 2 | Towards a Fundamental Language: | foundations |
+| 42 | intro2.pdf | 2 | Towards a Fundamental Language: | foundations |
+| 43 | main10.pdf | 14 | Fundamental Interaction Language | foundations |
+| 44 | main_Grok.pdf | 4 | Neural Path Integrals and the Semantic Action Principle | foundations |
